@@ -70,7 +70,7 @@ ServerEvents.recipes(event => {
 
     //Handle All WoodMalum/Logs into default soulwood planks
     event.remove({ output: 'malum:soulwood_planks' })
-    event.shapeless(`malum:soulwood_planks`, [
+    event.shapeless(`2x malum:soulwood_planks`, [
         '#malum:soulwood_logs'
     ])
     event.recipes.gtceu.cutter(`cosmicfrontiers:malum/stupid_malum_wood_cutting`)
@@ -89,7 +89,7 @@ ServerEvents.recipes(event => {
         })
     //Now Runewood
     event.remove({ output: 'malum:runewood_planks' })
-    event.shapeless(`malum:runewood_planks`, [
+    event.shapeless(`2x malum:runewood_planks`, [
         '#malum:runewood_logs'
     ])
     event.recipes.gtceu.cutter(`cosmicfrontiers:malum/stupid_malum_wood_cutting_2`)

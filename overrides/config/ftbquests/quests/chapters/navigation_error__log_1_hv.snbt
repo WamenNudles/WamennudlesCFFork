@@ -7,6 +7,25 @@
 	group: "533DAA16C8D9D30C"
 	icon: "gtceu:titanium_ingot"
 	id: "124E2C5B9FAD4967"
+	images: [
+		{
+			height: 1.5d
+			image: "frontiers:textures/questimages/miscicons/blank_borders.png"
+			order: 10
+			rotation: 0.0d
+			width: 4.0d
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			height: 2.5d
+			image: "frontiers:textures/questimages/miscicons/hv.png"
+			rotation: 0.0d
+			width: 7.0d
+			x: -7.0d
+			y: -1.0d
+		}
+	]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
@@ -30,25 +49,13 @@
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "Got it all? Then Good Luck!"
-			tasks: [
-				{
-					id: "1305C5CEEDE937A2"
-					item: "gtceu:hv_machine_hull"
-					type: "item"
-				}
-				{
-					id: "3203C9E9EA6939D6"
-					item: "gtceu:advanced_integrated_circuit"
-					type: "item"
-				}
-				{
-					id: "12A729FA63B54AA4"
-					item: "gtceu:kanthal_coil_block"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "1305C5CEEDE937A2"
+				item: "gtceu:hv_machine_hull"
+				type: "item"
+			}]
 			title: "HV Chapter Unlocked!"
-			x: 0.0d
+			x: -0.5d
 			y: 0.0d
 		}
 		{
@@ -63,7 +70,7 @@
 				item: "gtceu:hv_assembler"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
@@ -86,37 +93,33 @@
 					type: "item"
 				}
 			]
-			x: 15.0d
+			x: 15.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["1E72D62913EEB4EE"]
+			dependencies: ["191C122FA055DE43"]
 			description: [
 				"Your Next tier of circuits will require new boards."
 				""
-				"Check out JEI on how to craft these."
+				"Check out EMI on how to craft these."
 			]
-			icon: "gtceu:plastic_printed_circuit_board"
+			icon: "cosmiccore:runewoven_plastic_circuit_board"
 			id: "1FCA1401D0AD6DA9"
 			shape: "hexagon"
 			subtitle: "The journey to better Circuits!"
-			tasks: [
-				{
-					id: "7AEE882B573B5A04"
-					item: "gtceu:plastic_printed_circuit_board"
-					type: "item"
-				}
-				{
-					id: "6F24F06EBA0CAC96"
-					item: "gtceu:plastic_circuit_board"
-					type: "item"
-				}
-			]
-			x: 0.0d
-			y: -1.5d
+			tasks: [{
+				id: "44950225FC66D72B"
+				item: "cosmiccore:runewoven_plastic_circuit_board"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -5.5d
 		}
 		{
-			dependencies: ["1FCA1401D0AD6DA9"]
+			dependencies: [
+				"1E72D62913EEB4EE"
+				"191C122FA055DE43"
+			]
 			id: "3B8346823C7FFDD0"
 			shape: "hexagon"
 			size: 2.0d
@@ -126,7 +129,7 @@
 				item: "gtceu:cleanroom"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: -3.0d
 		}
 		{
@@ -138,7 +141,7 @@
 				item: "gtceu:smd_transistor"
 				type: "item"
 			}]
-			x: 1.0d
+			x: 0.5d
 			y: -4.5d
 		}
 		{
@@ -150,7 +153,7 @@
 				item: "gtceu:smd_resistor"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: -4.5d
 		}
 		{
@@ -162,7 +165,7 @@
 				item: "gtceu:smd_capacitor"
 				type: "item"
 			}]
-			x: -1.0d
+			x: -1.5d
 			y: -4.5d
 		}
 		{
@@ -174,7 +177,7 @@
 				item: "gtceu:smd_diode"
 				type: "item"
 			}]
-			x: -1.0d
+			x: -1.5d
 			y: -7.5d
 		}
 		{
@@ -186,7 +189,7 @@
 				item: "gtceu:smd_inductor"
 				type: "item"
 			}]
-			x: 1.0d
+			x: 0.5d
 			y: -7.0d
 		}
 		{
@@ -195,14 +198,15 @@
 				"59EB991DF52596F0"
 				"282A154B3983C3A9"
 				"3B8346823C7FFDD0"
+				"1FCA1401D0AD6DA9"
 			]
 			id: "1007F13C9C6952A8"
 			tasks: [{
-				id: "6A7E15A8F9758CB2"
-				item: "gtceu:micro_processor"
+				id: "36AB307A696B42B3"
+				item: "cosmiccore:hex_processor"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: -5.5d
 		}
 		{
@@ -212,11 +216,11 @@
 			]
 			id: "3A2AD8FCB13B7A29"
 			tasks: [{
-				id: "0B11CDF87221E0C3"
-				item: "gtceu:micro_processor_assembly"
+				id: "11AE6402915E0EC0"
+				item: "cosmiccore:hex_processor_assembly"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: -7.0d
 		}
 		{
@@ -227,12 +231,12 @@
 			id: "0594F9E432881E41"
 			shape: "hexagon"
 			tasks: [{
-				id: "6868B2C4EF71FF9D"
-				item: "gtceu:micro_processor_computer"
+				id: "602876EE6150CB35"
+				item: "cosmiccore:hex_processor_supercomputer"
 				type: "item"
 			}]
 			title: "Your First EV Circuits!"
-			x: 0.0d
+			x: -0.5d
 			y: -8.5d
 		}
 		{
@@ -244,19 +248,19 @@
 				item: "gtceu:hv_circuit_assembler"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: -12.5d
 		}
 		{
 			dependencies: ["1CA4C29ADA4BF7F3"]
 			id: "5F0B8C3DC264D3C4"
 			tasks: [{
-				id: "6E0C7209CF918138"
-				item: "gtceu:micro_processor_mainframe"
+				id: "0ED2FA3D5428023A"
+				item: "cosmiccore:hex_processor_mainframe"
 				type: "item"
 			}]
 			title: "Your First IV Circuit!"
-			x: 7.5d
+			x: 8.0d
 			y: -12.5d
 		}
 		{
@@ -274,7 +278,7 @@
 				item: "ad_astra:nasa_workbench"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 8.0d
 			y: -6.0d
 		}
 		{
@@ -287,7 +291,7 @@
 				item: "gtceu:vacuum_freezer"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.5d
 			y: -8.5d
 		}
 		{
@@ -304,7 +308,7 @@
 				type: "item"
 			}]
 			title: "Nichrome! Finally!"
-			x: 2.0d
+			x: 1.5d
 			y: -6.0d
 		}
 		{
@@ -321,7 +325,7 @@
 				type: "item"
 			}]
 			title: "Water won't work"
-			x: 2.0d
+			x: 1.5d
 			y: -4.5d
 		}
 		{
@@ -332,7 +336,7 @@
 				item: "gtceu:nichrome_dust"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.5d
 			y: -1.0d
 		}
 		{
@@ -364,7 +368,7 @@
 				type: "item"
 			}]
 			title: "Hot and Ready"
-			x: 3.5d
+			x: 3.0d
 			y: -6.0d
 		}
 		{
@@ -399,7 +403,7 @@
 				item: "gtceu:hv_energy_input_hatch"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 3.0d
 			y: 1.5d
 		}
 		{
@@ -411,7 +415,7 @@
 				item: "gtceu:sodium_potassium_bucket"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.5d
 			y: 1.5d
 		}
 		{
@@ -550,7 +554,7 @@
 				item: "gtceu:raw_cooperite"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 15.5d
 			y: -1.5d
 		}
 		{
@@ -572,7 +576,7 @@
 				type: "item"
 			}]
 			title: "Gloomper Chemistry"
-			x: 15.0d
+			x: 15.5d
 			y: 3.0d
 		}
 		{
@@ -584,16 +588,16 @@
 				item: "gtceu:raw_uraninite"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 11.0d
 			y: -7.5d
 		}
 		{
 			dependencies: [
 				"23A933976858723B"
-				"19B3D686A4E2FFC9"
 				"6D0B9D44B257407B"
 				"1B7405FD959C65B3"
 				"26E530EE80A932EB"
+				"7B2CF8BBF951CFED"
 			]
 			description: [
 				"&8Neodymium&r? Check."
@@ -608,8 +612,7 @@
 				"&5EV&r will contain more &5elaborate extraction lines&r and &ematerial production&r than HV."
 				"Be prepared to &lexpand your power grid&r, &lbolster resource production&r, and &lexpand to new  worlds&r."
 			]
-			hide_until_deps_complete: true
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "7C8367D922103E19"
 			min_width: 350
 			rewards: [
@@ -633,8 +636,8 @@
 					type: "item"
 				}
 			]
-			shape: "octagon"
-			size: 2.0d
+			shape: "hexagon"
+			size: 1.75d
 			subtitle: "To EV and Beyond!"
 			tasks: [{
 				id: "7F5E3BB7347B9FBF"
@@ -660,7 +663,7 @@
 				item: "gtceu:distillation_tower"
 				type: "item"
 			}]
-			x: -2.0d
+			x: -2.5d
 			y: -8.5d
 		}
 		{
@@ -673,24 +676,24 @@
 				item: "gtceu:utherium_gem"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 11.0d
 			y: 0.0d
 		}
 		{
 			dependencies: [
 				"38D3B895535F1DCA"
-				"7BAC6172AE03B4A9"
-				"26E530EE80A932EB"
+				"050F8CA5E095DFD3"
+				"1B9172203812659B"
 			]
 			id: "23A933976858723B"
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
-				id: "5DEBBBA2828627E0"
-				item: "gtceu:luminescent_utherium_ingot"
+				id: "46D2A8030EDAF264"
+				item: "gtceu:tempered_iesnium_ingot"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -713,7 +716,7 @@
 				item: "gtceu:luminite_ingot"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 8.0d
 			y: -4.0d
 		}
 		{
@@ -832,7 +835,7 @@
 				item: "gtceu:large_chemical_reactor"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 3.0d
 			y: 3.0d
 		}
 		{
@@ -853,7 +856,7 @@
 				}
 			]
 			title: "Steam Cracking."
-			x: -6.0d
+			x: -6.5d
 			y: -10.5d
 		}
 		{
@@ -877,7 +880,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -5.5d
+			x: -6.0d
 			y: -8.5d
 		}
 		{
@@ -897,7 +900,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -7.0d
+			x: -7.5d
 			y: -12.5d
 		}
 		{
@@ -917,7 +920,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -8.0d
+			x: -8.5d
 			y: -12.5d
 		}
 		{
@@ -937,7 +940,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -6.0d
+			x: -6.5d
 			y: -12.5d
 		}
 		{
@@ -961,7 +964,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -4.5d
+			x: -5.0d
 			y: -8.5d
 		}
 		{
@@ -981,7 +984,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -4.0d
+			x: -4.5d
 			y: -12.5d
 		}
 		{
@@ -1005,7 +1008,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -7.5d
+			x: -8.0d
 			y: -8.5d
 		}
 		{
@@ -1029,7 +1032,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -6.5d
+			x: -7.0d
 			y: -8.5d
 		}
 		{
@@ -1049,7 +1052,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -5.0d
+			x: -5.5d
 			y: -12.5d
 		}
 		{
@@ -1062,7 +1065,7 @@
 				item: "gtceu:pyrolyse_oven"
 				type: "item"
 			}]
-			x: -6.0d
+			x: -6.5d
 			y: -6.5d
 		}
 		{
@@ -1075,7 +1078,7 @@
 				id: "3A38876635FD0F84"
 				type: "checkmark"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: 3.0d
 		}
 		{
@@ -1086,7 +1089,7 @@
 				item: "gtceu:cooperite_dust"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 14.0d
 			y: -1.5d
 		}
 		{
@@ -1097,7 +1100,7 @@
 				item: "gtceu:roasted_cooperite_dust"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 12.5d
 			y: -1.5d
 		}
 		{
@@ -1108,7 +1111,7 @@
 				item: "gtceu:nickel_depleted_cooperite_dust"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 12.5d
 			y: -3.0d
 		}
 		{
@@ -1128,7 +1131,7 @@
 					type: "checkmark"
 				}
 			]
-			x: 12.0d
+			x: 12.5d
 			y: -4.5d
 		}
 		{
@@ -1148,7 +1151,7 @@
 					type: "checkmark"
 				}
 			]
-			x: 13.5d
+			x: 14.0d
 			y: -4.5d
 		}
 		{
@@ -1159,7 +1162,7 @@
 				item: "gtceu:ammonium_hexachloroplatinate_dust"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 12.5d
 			y: -6.0d
 		}
 		{
@@ -1170,7 +1173,7 @@
 				item: "gtceu:platinum_dust"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 12.5d
 			y: -7.5d
 		}
 		{
@@ -1184,7 +1187,7 @@
 				id: "7C15A93D65EA6CE4"
 				type: "checkmark"
 			}]
-			x: 12.0d
+			x: 12.5d
 			y: -9.0d
 		}
 		{
@@ -1204,7 +1207,7 @@
 					type: "checkmark"
 				}
 			]
-			x: 10.5d
+			x: 11.0d
 			y: -1.5d
 		}
 		{
@@ -1215,7 +1218,7 @@
 				item: "gtceu:nickel_dust"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 11.0d
 			y: -3.0d
 		}
 		{
@@ -1226,7 +1229,7 @@
 				item: "gtceu:ammonium_hexachloropalladate_dust"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 14.0d
 			y: -6.0d
 		}
 		{
@@ -1237,7 +1240,7 @@
 				item: "gtceu:tetraammine_palladium_chloride_dust"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 14.0d
 			y: -7.5d
 		}
 		{
@@ -1248,7 +1251,7 @@
 				item: "gtceu:palladium_dust"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 14.0d
 			y: -9.0d
 		}
 		{
@@ -1261,7 +1264,7 @@
 				item: "gtceu:platinum_group_sludge_dust"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 15.5d
 			y: -4.5d
 		}
 		{
@@ -1282,7 +1285,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -8.5d
+			x: -9.0d
 			y: -4.5d
 		}
 		{
@@ -1303,7 +1306,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -8.5d
+			x: -9.0d
 			y: -6.5d
 		}
 		{
@@ -1324,7 +1327,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -3.5d
+			x: -4.0d
 			y: -6.5d
 		}
 		{
@@ -1345,7 +1348,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -3.5d
+			x: -4.0d
 			y: -4.5d
 		}
 		{
@@ -1366,7 +1369,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -3.5d
+			x: -4.0d
 			y: -5.5d
 		}
 		{
@@ -1387,7 +1390,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -4.5d
+			x: -5.0d
 			y: -4.5d
 		}
 		{
@@ -1408,7 +1411,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -7.5d
+			x: -8.0d
 			y: -4.5d
 		}
 		{
@@ -1429,7 +1432,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -8.5d
+			x: -9.0d
 			y: -5.5d
 		}
 		{
@@ -1450,7 +1453,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -6.5d
+			x: -7.0d
 			y: -4.5d
 		}
 		{
@@ -1471,7 +1474,7 @@
 					type: "checkmark"
 				}
 			]
-			x: -5.5d
+			x: -6.0d
 			y: -4.5d
 		}
 		{
@@ -1488,7 +1491,7 @@
 				}
 				type: "item"
 			}]
-			x: 10.5d
+			x: 11.0d
 			y: -6.0d
 		}
 		{
@@ -1502,7 +1505,7 @@
 				title: "Visit the Moon!"
 				type: "dimension"
 			}]
-			x: 10.5d
+			x: 11.0d
 			y: -4.0d
 		}
 		{
@@ -1514,7 +1517,7 @@
 				item: "gtceu:neodymium_dust"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 7.0d
 			y: 2.0d
 		}
 		{
@@ -1525,8 +1528,8 @@
 				item: "gtceu:leached_lre_residue_dust"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 3.5d
+			x: 10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1A630507AAB765E6"]
@@ -1537,7 +1540,7 @@
 				item: "gtceu:praseodymium_dust"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 7.0d
 			y: 3.0d
 		}
 		{
@@ -1549,20 +1552,20 @@
 				item: "gtceu:cerium_dust"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 7.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["1A630507AAB765E6"]
 			id: "050F8CA5E095DFD3"
-			shape: "rsquare"
+			shape: "hexagon"
 			tasks: [{
 				id: "14EA11E226A744BE"
 				item: "gtceu:lanthanum_dust"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 4.0d
+			x: 9.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3302CF516C57AC40"]
@@ -1581,7 +1584,7 @@
 					type: "checkmark"
 				}
 			]
-			x: 13.0d
+			x: 13.5d
 			y: 3.0d
 		}
 		{
@@ -1601,28 +1604,8 @@
 					type: "checkmark"
 				}
 			]
-			x: 11.5d
+			x: 12.0d
 			y: 3.0d
-		}
-		{
-			dependencies: ["38032C6144C06B2B"]
-			icon: "gtceu:mixed_lre_leachate_bucket"
-			id: "3B6079B88AB61576"
-			tasks: [
-				{
-					id: "055D50D90E9D917B"
-					item: "gtceu:mixed_lre_leachate_bucket"
-					type: "item"
-				}
-				{
-					disable_toast: true
-					id: "03933F1576500CAA"
-					title: "Chain Quest - Skip me!"
-					type: "checkmark"
-				}
-			]
-			x: 10.0d
-			y: 2.5d
 		}
 		{
 			dependencies: ["7C280469C5926E0A"]
@@ -1641,21 +1624,18 @@
 				type: "checkmark"
 			}]
 			title: "About Platinum/Palladium"
-			x: 15.0d
+			x: 15.5d
 			y: -3.0d
 		}
 		{
-			dependencies: [
-				"3B6079B88AB61576"
-				"483EDAD71360C4C4"
-			]
+			dependencies: ["483EDAD71360C4C4"]
 			id: "1A630507AAB765E6"
 			tasks: [{
 				id: "102D74DD3691DB10"
 				item: "gtceu:wet_lre_precipitate_bucket"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 9.0d
 			y: 3.0d
 		}
 		{
@@ -1666,7 +1646,7 @@
 				item: "gtceu:hv_chemical_bath"
 				type: "item"
 			}]
-			x: -1.5d
+			x: -2.0d
 			y: 3.0d
 		}
 		{
@@ -1677,7 +1657,7 @@
 				item: "minecraft:ender_eye"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -3.5d
 			y: 3.0d
 		}
 		{
@@ -1688,7 +1668,7 @@
 				item: "gtceu:hv_sensor"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -4.5d
 			y: 2.0d
 		}
 		{
@@ -1699,7 +1679,7 @@
 				item: "gtceu:hv_emitter"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -4.5d
 			y: 4.0d
 		}
 		{
@@ -1713,7 +1693,7 @@
 				item: "cosmiccore:hv_radio_module"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -5.5d
 			y: 3.0d
 		}
 		{
@@ -1733,7 +1713,7 @@
 				item: "cosmiccore:hv_wireless_charger"
 				type: "item"
 			}]
-			x: -6.5d
+			x: -7.0d
 			y: 3.0d
 		}
 		{
@@ -1745,7 +1725,7 @@
 				item: "gtceu:hv_macerator"
 				type: "item"
 			}]
-			x: -1.0d
+			x: -1.5d
 			y: 4.5d
 		}
 		{
@@ -1763,7 +1743,7 @@
 				item: "gtceu:hv_polarizer"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: 5.0d
 		}
 		{
@@ -1808,7 +1788,7 @@
 			]
 			title: "The Song"
 			x: 6.5d
-			y: -2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["7C8367D922103E19"]
@@ -1833,7 +1813,59 @@
 				type: "checkmark"
 			}]
 			x: 6.5d
-			y: -1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"19B3D686A4E2FFC9"
+				"24722247CDC4FA30"
+				"7BAC6172AE03B4A9"
+			]
+			id: "7B2CF8BBF951CFED"
+			tasks: [{
+				id: "6FABEBC81DF015F8"
+				item: "gtceu:luminized_titanium_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1E72D62913EEB4EE"]
+			hide_dependency_lines: true
+			id: "24722247CDC4FA30"
+			tasks: [{
+				id: "0C3B203B4FA104EE"
+				item: "gtceu:platinum_ingot"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1E72D62913EEB4EE"]
+			id: "191C122FA055DE43"
+			subtitle: "Energized Red Steel"
+			tasks: [{
+				id: "006FBB8DF58C89E1"
+				item: "cosmiccore:energetic_alloy_ingot"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["1E72D62913EEB4EE"]
+			hide_dependency_lines: true
+			id: "1B9172203812659B"
+			shape: "hexagon"
+			tasks: [{
+				id: "63CC1F15EEFC62BD"
+				item: "occultism:iesnium_ingot"
+				type: "item"
+			}]
+			x: 8.0d
+			y: -2.0d
 		}
 	]
 	title: "Gloomper Chemistry [HV]"

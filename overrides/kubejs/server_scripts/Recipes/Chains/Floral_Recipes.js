@@ -51,9 +51,6 @@ ServerEvents.recipes(event => {
         'minecraft:moss_block',
         'minecraft:moss_carpet',
         'farmersdelight:onion',
-        'miners_delight:cave_carrot',
-        'vintagedelight:peanut',
-        'vintagedelight:gearo_berry',
         'delightful:green_tea_leaf',
         'biomesoplenty:reed',
         'biomesoplenty:cattail',
@@ -75,6 +72,32 @@ ServerEvents.recipes(event => {
         'biomesoplenty:glowing_moss_block',
         'biomesoplenty:glowshroom',
         'biomesoplenty:toadstool',
+        'vegandelight:soybean',
+        'botania:white_double_flower',
+        'botania:light_gray_double_flower',
+        'botania:gray_double_flower',
+        'botania:black_double_flower',
+        'botania:red_double_flower',
+        'botania:green_double_flower',
+        'botania:blue_double_flower',
+        'botania:yellow_double_flower',
+        'botania:light_blue_double_flower',
+        'botania:orange_double_flower',
+        'botania:pink_double_flower',
+        'botania:lime_double_flower',
+        'botania:cyan_double_flower',
+        'botania:brown_double_flower',
+        'botania:magenta_double_flower',
+        'botania:purple_double_flower',
+        'farmersdelight:rice_panicle',
+        'culturaldelights:avocado',
+        'culturaldelights:cucumber',
+        'culturaldelights:eggplant',
+        'culturaldelights:white_eggplant',
+        'culturaldelights:corn_cob',
+        'delightful:salmonberries',   
+        'delightful:acorn',
+        'seeddelight:cherry',        
     ]
 
     floraOverworld.forEach(floraOw => {
@@ -139,12 +162,7 @@ ServerEvents.recipes(event => {
         'farmersdelight:tomato',
         'supplementaries:flax',
         'occultism:datura',
-        'delightful:cantaloupe',
-        'vintagedelight:oat',
-        'vintagedelight:ghost_pepper',
-        'vintagedelight:cucumber',
-        'corn_delight:corn',
-        'croptopia:vanilla',
+        'delightful:cantaloupe'
     ]
 
     floraOverworldSeeds.forEach(floraOw => {
@@ -173,142 +191,82 @@ ServerEvents.recipes(event => {
             .duration(120)
             .EUt(GTValues.VA[GTValues.MV] / 2)
     })
-
-    let floraOverworldSeed = [
-        'croptopia:artichoke',
-        'croptopia:asparagus',
-        'croptopia:barley',
-        'croptopia:basil',
-        'croptopia:bellpepper',
-        'croptopia:blackbean',
-        'croptopia:blackberry',
-        'croptopia:blueberry',
-        'croptopia:broccoli',
-        'croptopia:cabbage',
-        'croptopia:cantaloupe',
-        'croptopia:cauliflower',
-        'croptopia:celery',
-        'croptopia:chile_pepper',
-        'croptopia:corn',
-        'croptopia:cranberry',
-        'croptopia:cucumber',
-        'croptopia:currant',
-        'croptopia:eggplant',
-        'croptopia:elderberry',
-        'croptopia:garlic',
-        'croptopia:ginger',
-        'croptopia:grape',
-        'croptopia:greenbean',
-        'croptopia:greenonion',
-        'croptopia:honeydew',
-        'croptopia:hops',
-        'croptopia:kale',
-        'croptopia:kiwi',
-        'croptopia:leek',
-        'croptopia:lettuce',
-        'croptopia:mustard',
-        'croptopia:oat',
-        'croptopia:olive',
-        'croptopia:onion',
-        'croptopia:peanut',
-        'croptopia:pepper',
-        'croptopia:pineapple',
-        'croptopia:radish',
-        'croptopia:raspberry',
-        'croptopia:rhubarb',
-        'croptopia:rice',
-        'croptopia:rutabaga',
-        'croptopia:saguaro',
-        'croptopia:soybean',
-        'croptopia:spinach',
-        'croptopia:squash',
-        'croptopia:strawberry',
-        'croptopia:sweetpotato', ,
-        'croptopia:tomatillo',
-        'croptopia:tomato',
-        'croptopia:turmeric',
-        'croptopia:turnip',
-        'croptopia:yam',
-        'croptopia:zucchini'
-    ]
-
-    floraOverworldSeed.forEach(floraOw => {
-        event.recipes.gtceu.flora_nurturer(`${floraOw}_nether`)
-            .notConsumable(`1x ${floraOw}_seed`)
-            .notConsumable('minecraft:dirt')
-            .inputFluids('gtceu:nether_sediment_sludge 100')
-            .itemOutputs(`2x ${floraOw}`)
-            .chancedOutput(`1x ${floraOw}`, 5000, 500)
-            .duration(160)
-            .EUt(GTValues.VA[GTValues.LV] / 2)
-        event.recipes.gtceu.flora_nurturer(`${floraOw}_aether`)
-            .notConsumable(`1x ${floraOw}_seed`)
-            .notConsumable('minecraft:dirt')
-            .inputFluids('gtceu:aether_augmented_sediment 100')
-            .itemOutputs(`4x ${floraOw}`)
-            .chancedOutput(`2x ${floraOw}`, 5000, 500)
-            .duration(120)
-            .EUt(GTValues.VA[GTValues.MV] / 2)
-        event.recipes.gtceu.flora_nurturer(`${floraOw}_nutrient_solution`)
-            .notConsumable(`1x ${floraOw}_seed`)
-            .notConsumable('minecraft:moss_block')
-            .inputFluids('gtceu:nutrient_solution 50')
-            .itemOutputs(`24x ${floraOw}`)
-            .chancedOutput(`16x ${floraOw}`, 5000, 500)
-            .duration(120)
-            .EUt(GTValues.VA[GTValues.MV] / 2)
-    })
-
-    //Coffee
-    event.recipes.gtceu.flora_nurturer('coffee_nether')
-        .notConsumable('croptopia:coffee_seed')
-        .notConsumable('minecraft:dirt')
-        .inputFluids('gtceu:nether_sediment_sludge 100')
-        .itemOutputs('2x croptopia:coffee_beans')
-        .chancedOutput(`1x croptopia:coffee_beans`, 5000, 500)
-        .duration(160)
-        .EUt(GTValues.VA[GTValues.LV] / 2)
-    event.recipes.gtceu.flora_nurturer('coffee_aether')
-        .notConsumable('croptopia:coffee_seed')
-        .notConsumable('minecraft:dirt')
-        .inputFluids('gtceu:aether_augmented_sediment 100')
-        .itemOutputs('4x croptopia:coffee_beans')
-        .chancedOutput(`2x croptopia:coffee_beans`, 5000, 500)
-        .duration(120)
-        .EUt(GTValues.VA[GTValues.MV] / 2)
-    //Tea
-    event.recipes.gtceu.flora_nurturer('tea_nether')
-        .notConsumable('croptopia:tea_seed')
-        .notConsumable('minecraft:dirt')
-        .inputFluids('gtceu:nether_sediment_sludge 100')
-        .itemOutputs('2x croptopia:tea_leaves')
-        .chancedOutput(`2x croptopia:tea_leaves`, 5000, 500)
-        .duration(160)
-        .EUt(GTValues.VA[GTValues.LV] / 2)
-    event.recipes.gtceu.flora_nurturer('tea_aether')
-        .notConsumable('croptopia:tea_seed')
-        .notConsumable('minecraft:dirt')
-        .inputFluids('gtceu:aether_augmented_sediment 100')
-        .itemOutputs('4x croptopia:tea_leaves')
-        .chancedOutput(`2x croptopia:tea_leaves`, 5000, 500)
-        .duration(120)
-        .EUt(GTValues.VA[GTValues.MV] / 2)
-    //Soul Sprout
-    event.recipes.gtceu.flora_nurturer('soul_cultivation')
+    //ferns
+    event.recipes.gtceu.flora_nurturer('ice_fern_cultivation')
         .notConsumable('legendarysurvivaloverhaul:ice_fern_leaf')
         .notConsumable('minecraft:moss_block')
         .inputFluids(Fluid.of('gtceu:nether_sediment_sludge', 500))
-        .itemOutputs('legendarysurvivaloverhaul:ice_fern_leaf')
-        .chancedOutput(Item.of('legendarysurvivaloverhaul:ice_fern_leaf', 1), 2500, 500)
+        .itemOutputs('2x legendarysurvivaloverhaul:ice_fern_leaf')
+        .chancedOutput(Item.of('legendarysurvivaloverhaul:ice_fern_leaf', 2), 2500, 500)
         .duration(160)
         .EUt(GTValues.VA[GTValues.LV] / 2);
-    event.recipes.gtceu.flora_nurturer('soul_cultivation_nutrient_sol')
+    event.recipes.gtceu.flora_nurturer('ice_fern_cultivation_nutrient_sol')
         .notConsumable('legendarysurvivaloverhaul:ice_fern_leaf')
         .notConsumable('minecraft:moss_block')
         .inputFluids('gtceu:nutrient_solution 50')
         .itemOutputs('16x legendarysurvivaloverhaul:ice_fern_leaf')
+        .chancedOutput(Item.of('legendarysurvivaloverhaul:ice_fern_leaf', 8), 2500, 500)
+        .duration(120)
+        .EUt(GTValues.VA[GTValues.MV] / 2);
+
+    event.recipes.gtceu.flora_nurturer('sun_fern_cultivation')
+        .notConsumable('legendarysurvivaloverhaul:sun_fern_leaf')
+        .notConsumable('minecraft:moss_block')
+        .inputFluids(Fluid.of('gtceu:nether_sediment_sludge', 500))
+        .itemOutputs('2x legendarysurvivaloverhaul:sun_fern_leaf')
+        .chancedOutput(Item.of('legendarysurvivaloverhaul:sun_fern_leaf', 2), 2500, 500)
+        .duration(160)
+        .EUt(GTValues.VA[GTValues.LV] / 2);
+    event.recipes.gtceu.flora_nurturer('sun_fern_cultivation_nutrient_sol')
+        .notConsumable('legendarysurvivaloverhaul:sun_fern_leaf')
+        .notConsumable('minecraft:moss_block')
+        .inputFluids('gtceu:nutrient_solution 50')
+        .itemOutputs('16x legendarysurvivaloverhaul:sun_fern_leaf')
+        .chancedOutput(Item.of('legendarysurvivaloverhaul:sun_fern_leaf', 8), 2500, 500)
+        .duration(120)
+        .EUt(GTValues.VA[GTValues.MV] / 2);
+    //chorus fruit
+    event.recipes.gtceu.flora_nurturer('chorus_fruit_cultivation')
+        .notConsumable('minecraft:chorus_flower')
+        .notConsumable('minecraft:end_stone')
+        .inputFluids(Fluid.of('gtceu:nether_sediment_sludge', 100))
+        .itemOutputs('2x minecraft:chorus_fruit')
+        .chancedOutput(Item.of('minecraft:chorus_fruit', 2), 2500, 500)
+        .duration(160)
+        .EUt(GTValues.VA[GTValues.LV] / 2);
+    event.recipes.gtceu.flora_nurturer('chorus_fruit_cultivation_aether_sediment')
+        .notConsumable('minecraft:chorus_flower')
+        .notConsumable('minecraft:end_stone')
+        .inputFluids('gtceu:aether_augmented_sediment 100')
+        .itemOutputs('8x minecraft:chorus_fruit')
+        .chancedOutput(Item.of('minecraft:chorus_fruit', 4), 2500, 500)
+        .duration(120)
+        .EUt(GTValues.VA[GTValues.MV] / 2);
+    event.recipes.gtceu.flora_nurturer('chorus_fruit_cultivation_nutrient_sol')
+        .notConsumable('minecraft:chorus_flower')
+        .notConsumable('minecraft:end_stone')
+        .inputFluids('gtceu:nutrient_solution 50')
+        .itemOutputs('24x minecraft:chorus_fruit')
+        .chancedOutput(Item.of('minecraft:chorus_fruit', 16), 2500, 500)
+        .duration(120)
+        .EUt(GTValues.VA[GTValues.MV] / 2);
+    //tau berry
+    event.recipes.gtceu.flora_nurturer('tau_berry_cultivation')
+        .notConsumable('bloodmagic:weak_tau')
+        .notConsumable('minecraft:moss_block')
+        .inputFluids(Fluid.of('gtceu:nether_sediment_sludge', 500))
+        .itemOutputs('2x bloodmagic:weak_tau')
+        .chancedOutput(Item.of('bloodmagic:weak_tau', 2), 2500, 500)
+        .duration(160)
+        .EUt(GTValues.VA[GTValues.LV] / 2);
+    event.recipes.gtceu.flora_nurturer('tau_berry_cultivation_nutrient_sol')
+        .notConsumable('bloodmagic:weak_tau')
+        .notConsumable('minecraft:moss_block')
+        .inputFluids('gtceu:nutrient_solution 50')
+        .itemOutputs('16x bloodmagic:weak_tau')
         .duration(160)
         .EUt(GTValues.VA[GTValues.MV] / 2);
+    //nether flora    
     let floraNether = [
         'biomesoplenty:glowflower',
         'biomesoplenty:burning_blossom',
@@ -341,18 +299,8 @@ ServerEvents.recipes(event => {
             .duration(120)
             .EUt(GTValues.VA[GTValues.MV] / 2 / 2)
     })
-
+    //aether flora
     let floraAether = [
-        'deep_aether:lightcap_mushrooms',
-        'deep_aether:radiant_orchid',
-        'deep_aether:aerlavender',
-        'deep_aether:aether_cattails',
-        'deep_aether:golden_flower',
-        'deep_aether:enchanted_blossom',
-        'deep_aether:sky_tulips',
-        'deep_aether:iaspove',
-        'deep_aether:golden_aspess',
-        'deep_aether:echaisy',
         'aether:purple_flower',
         'aether:white_flower',
         'aether:aechor_petal'

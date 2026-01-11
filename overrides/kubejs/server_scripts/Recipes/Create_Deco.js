@@ -3,6 +3,7 @@ let yeet = (itemName) => {
         event.remove({ output: itemName })
     })
     ServerEvents.tags('item', event => {
+        console.log('[7] - [1] - TAG-WATCHER')
         event.add('c:hidden_from_recipe_viewers', itemName)
 
     })
@@ -13,7 +14,7 @@ yeet('createdeco:industrial_iron_sheet')
 yeet('createdeco:industrial_iron_nugget')
 yeet('createdeco:netherite_sheet')
 yeet('createdeco:netherite_nugget')
-
+yeet('copycats:copycat_fluid_pipe') //crashes the game when looking at the pipe while it has running fluid, copycats+ ver 3.0.2
 
 ServerEvents.recipes(event => {
     event.replaceInput({ mod: 'createdeco' },
@@ -64,4 +65,21 @@ ServerEvents.recipes(event => {
         'createdeco:industrial_iron_nugget',
         'gtceu:industrial_iron_nugget'
     )
+    event.replaceInput({ mod: 'copycats' },
+        'create:zinc_ingot',
+        'gtceu:zinc_ingot'  
+    )
+
+  event.recipes.gtceu.alloy_smelter("create:industrial_iron_ingot")
+    .itemInputs('4x minecraft:iron_ingot', '2x gtceu:coal_dust')
+    .itemOutputs('4x createdeco:industrial_iron_ingot')
+    .duration(100)
+    .EUt(16);
+
+  event.recipes.gtceu.mixer("gtceu:industrial_iron_dust")
+    .itemInputs('4x gtceu:iron_dust', '2x gtceu:coal_dust')
+    .circuit(1)
+    .itemOutputs('4x gtceu:industrial_iron_dust')
+    .duration(50)
+    .EUt(16);
 })

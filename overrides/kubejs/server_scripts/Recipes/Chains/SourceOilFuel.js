@@ -25,6 +25,13 @@ ServerEvents.recipes((event) => {
     .itemOutputs("kubejs:washed_magebloom")
     .duration(20)
     .EUt(16);
+  event.recipes.gtceu.ore_washer("magebloom_washing_distilled")
+    .itemInputs("ars_nouveau:magebloom")
+    .circuit(1)
+    .inputFluids('gtceu:distilled_water 100')
+    .itemOutputs("kubejs:washed_magebloom")
+    .duration(10)
+    .EUt(16);
   event.recipes.gtceu.macerator("magebloom_shredding")
     .itemInputs("kubejs:washed_magebloom")
     .itemOutputs("kubejs:shredded_magebloom")
@@ -34,8 +41,8 @@ ServerEvents.recipes((event) => {
   //Extraction
   event.recipes.gtceu.chemical_reactor("gtceu:centrifuge/source_oil_spinny")
     .itemInputs("4x kubejs:shredded_magebloom")
-    .inputFluids("gtceu:potent_mana 1000")
-    .inputFluids("water 3000")
+    .inputFluids("gtceu:potent_mana 250")
+    .inputFluids("water 3750")
     .outputFluids("gtceu:dirty_magebloom_slurry 4000")
     .duration(160)
     .EUt(24);
@@ -63,7 +70,7 @@ ServerEvents.recipes((event) => {
 
   //Transestrification
   event.recipes.gtceu.chemical_reactor("source_enhanced_bio_fuel")
-    .itemInputs("gtceu:tiny_sodium_hydroxide_dust")
+    .itemInputs('cosmiccore:tiny_somanone_dust')
     .inputFluids("gtceu:source_oils 6000")
     .inputFluids("gtceu:ethanol 1000")
     .outputFluids("gtceu:source_enhanced_bio_fuel 6000")
@@ -71,22 +78,15 @@ ServerEvents.recipes((event) => {
     .duration(600)
     .EUt(GTValues.VA[GTValues.LV]);
   event.recipes.gtceu.large_chemical_reactor("source_enhanced_bio_fuel_batch")
-    .itemInputs("gtceu:sodium_hydroxide_dust")
+    .itemInputs('cosmiccore:somanone_dust')
     .inputFluids("gtceu:source_oils 54000")
     .inputFluids("gtceu:ethanol 9000")
     .outputFluids("gtceu:source_enhanced_bio_fuel 54000")
     .outputFluids("gtceu:glycerol 9000")
     .duration(600)
     .EUt(GTValues.VA[GTValues.LV]);
-  event.recipes.gtceu.combustion_generator("combustion_source_fuel")
-    .inputFluids("gtceu:source_enhanced_bio_fuel 1")
-    .duration(15)
-    .EUt(-32);
-  event.remove({ id: 'gtceu:combustion_generator/naphtha' })
-  event.recipes.gtceu.combustion_generator('worse_naphtha')
-    .inputFluids('gtceu:naphtha 1')
-    .duration(6)
-    .EUt(-GTValues.V[GTValues.LV])
+
+
   //Starry Diesel - Superceeds CBD, Uses Gasoline , Luminite, and CBD to create an energy dense fuel
 
   // event.recipes.gtceu.distillation_tower("prim_oil_tier_1_distillation")

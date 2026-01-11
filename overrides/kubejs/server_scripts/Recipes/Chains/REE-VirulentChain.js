@@ -60,18 +60,6 @@ ServerEvents.recipes((event) => {
         .chancedOutput('4x gtceu:neodymium_dust', 6000, 500)
         .duration(600)
         .EUt(GTValues.VA[GTValues.HV]);
-    // //Chromate recycling
-    event.recipes.gtceu.chemical_reactor('chromium_hydroxide_reactor')
-        .itemInputs('6x gtceu:sodium_hydroxide')
-        .inputFluids('gtceu:chromate_waste_water 1000')
-        .itemOutputs('2x gtceu:chromium_hydroxide_dust')
-        .duration(60)
-        .EUt(GTValues.VA[GTValues.MV]);
-    event.recipes.gtceu.chemical_dehydrator('chromium_oxide_vvarm')
-        .itemInputs('gtceu:chromium_hydroxide_dust')
-        .itemOutputs('gtceu:chromium_iii_oxide_dust')
-        .duration(200)
-        .EUt(GTValues.VA[GTValues.HV]);
 
     // //D2EHPA synthesis
     event.recipes.gtceu.chemical_reactor('butanol_maker')
@@ -151,9 +139,9 @@ ServerEvents.recipes((event) => {
         .EUt(GTValues.VA[GTValues.EV]);
     event.recipes.gtceu.mixer('mre_leached_solution')
         .inputFluids('gtceu:mre_chlorides 1000')
-        .chancedFluidInput('gtceu:mre_extraction_mix 1000', 1500,0)
+        .chancedFluidInput('gtceu:mre_extraction_mix 1000', 1500, 0)
         .outputFluids('gtceu:mre_leachate 2000')
-        .duration(1200)
+        .duration(300)
         .EUt(GTValues.VA[GTValues.EV]);
     event.recipes.gtceu.centrifuge('mre_phase_separation')
         .inputFluids('gtceu:mre_leachate 4000')
@@ -167,7 +155,7 @@ ServerEvents.recipes((event) => {
         .itemOutputs('24x gtceu:mre_mixed_dust')
         .duration(400)
         .EUt(GTValues.VA[GTValues.EV]);
-    event.recipes.gtceu.centrifuge('mre_dust_separation') 
+    event.recipes.gtceu.centrifuge('mre_dust_separation')
         .itemInputs('4x gtceu:mre_mixed_dust')
         .chancedOutput('gtceu:europium_dust', 3500, 0)
         .chancedOutput('gtceu:gadolinium_dust', 3500, 0)
@@ -253,4 +241,31 @@ ServerEvents.recipes((event) => {
         .outputFluids('gtceu:cyanex_272 1000')
         .duration(200)
         .EUt(GTValues.VA[GTValues.IV]);
+
+
+
+    //LRE Skips
+    event.recipes.gtceu.industrial_chemvat('lre_skip_1')
+        .itemInputs('20x gtceu:sodium_hydroxide_dust')
+        .inputFluids('gtceu:lre_slag 5000', 'gtceu:nitric_acid 1000')
+        .outputFluids('gtceu:leached_lre_liquor 6000')
+        .duration(120)
+        .stationResearch(b => b
+            .researchStack('gtceu:ultradense_neodymium_plate')
+            .CWUt(16)
+            .EUt(GTValues.VA[GTValues.ZPM]))
+        .EUt(GTValues.V[GTValues.IV], 16);
+
+    event.recipes.gtceu.industrial_chemvat('lre_skip_2')
+        .inputFluids('gtceu:leached_lre_liquor 2000','gtceu:oxalic_acid 200')
+        .itemOutputs(['8x gtceu:neodymium_dust', '6x gtceu:lanthanum_dust', '4x gtceu:cerium_dust', '4x gtceu:praseodymium_dust'])
+        .duration(120)
+        .stationResearch(b => b
+            .researchStack('gtceu:ultradense_neodymium_plate')
+            .CWUt(16)
+            .EUt(GTValues.VA[GTValues.ZPM]))
+        .EUt(GTValues.V[GTValues.IV], 16);
+
+
+
 });

@@ -1,5 +1,5 @@
 
-console.info('[COSMIC MANAGER] - TEST TEST 123 WORLDGEN FILE FOR ORE REMOVALS HIT')
+console.info('[COSMIC MANAGER] - Worldgen File loaded and attempting to modify worldgen!')
 
 WorldgenEvents.remove(event => {
   event.removeOres(props => {
@@ -38,6 +38,10 @@ WorldgenEvents.remove(event => {
       "ad_astra:mars_ice_shard_ore",
       "ad_astra:mars_iron_ore",
       "ad_astra:mars_ostrum_ore",
+      'ad_astra:venus_coal_ore',
+      'ad_astra:venus_gold_ore',
+      'ad_astra:venus_diamond_ore',
+      'ad_astra:venus_calorite_ore',
       'malum:deepslate_soulstone_ore',
       'malum:soulstone_ore',
       'malum:blazing_quartz_ore',
@@ -45,9 +49,19 @@ WorldgenEvents.remove(event => {
       'malum:natural_quartz_ore',
       'malum:cthonic_gold_ore',
       'malum:brilliant_stone',
-      'malum:brilliant_deepslate'
+      'malum:brilliant_deepslate',
+      'cosmosportals:block_cosmic_ore',
+      'cosmosportals:block_deepslate_cosmic_ore',
+      'tconstruct:cobalt_ore',
+      'forestry:deepslate_tin_ore',
+      'forestry:tin_ore',
+      'forestry:deepslate_apatite_ore',
+      'forestry:apatite_ore'
     ]
   })
+
+
+
   event.removeFeatureById('raw_generation', [
     //FOR SOME REASON ADASTRA GENERATES ORES AT THIS GENERATION STEP      
     'ad_astra:moon_iron_ore',
@@ -59,6 +73,10 @@ WorldgenEvents.remove(event => {
     "ad_astra:mars_ice_shard_ore",
     "ad_astra:mars_iron_ore",
     "ad_astra:mars_ostrum_ore",
+    'ad_astra:venus_coal_ore',
+    'ad_astra:venus_gold_ore',
+    'ad_astra:venus_diamond_ore',
+    'ad_astra:venus_calorite_ore',
     'malum:deepslate_soulstone_ore',
     'malum:soulstone_ore',
     'malum:blazing_quartz_ore',
@@ -66,7 +84,14 @@ WorldgenEvents.remove(event => {
     'malum:natural_quartz_ore',
     'malum:cthonic_gold_ore',
     'malum:brilliant_stone',
-    'malum:brilliant_deepslate'
+    'malum:brilliant_deepslate',
+    'cosmosportals:block_cosmic_ore',
+    'cosmosportals:block_deepslate_cosmic_ore',
+    'tconstruct:cobalt_ore',
+    'forestry:deepslate_tin_ore',
+    'forestry:tin_ore',
+    'forestry:deepslate_apatite_ore',
+    'forestry:apatite_ore'
   ])
   event.removeFeatureById('underground_ores', [
     //FOR SOME REASON ADASTRA GENERATES ORES AT THIS GENERATION STEP      
@@ -98,6 +123,10 @@ WorldgenEvents.remove(event => {
     "ad_astra:mars_ice_shard_ore",
     "ad_astra:mars_iron_ore",
     "ad_astra:mars_ostrum_ore",
+    'ad_astra:venus_coal_ore',
+    'ad_astra:venus_gold_ore',
+    'ad_astra:venus_diamond_ore',
+    'ad_astra:venus_calorite_ore',
     'malum:deepslate_soulstone_ore',
     'malum:soulstone_ore',
     'malum:blazing_quartz_ore',
@@ -105,7 +134,14 @@ WorldgenEvents.remove(event => {
     'malum:natural_quartz_ore',
     'malum:cthonic_gold_ore',
     'malum:brilliant_stone',
-    'malum:brilliant_deepslate'
+    'malum:brilliant_deepslate',
+    'cosmosportals:block_cosmic_ore',
+    'cosmosportals:block_deepslate_cosmic_ore',
+    'tconstruct:cobalt_ore',
+    'forestry:deepslate_tin_ore',
+    'forestry:tin_ore',
+    'forestry:deepslate_apatite_ore',
+    'forestry:apatite_ore'
   ])
 })
 

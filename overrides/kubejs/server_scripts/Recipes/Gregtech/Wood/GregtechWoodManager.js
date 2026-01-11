@@ -63,8 +63,108 @@ ServerEvents.recipes(event => {
         .pressurePlate()
         .button()
         .boats();
+    // //Forestry
+    new Wood('forestry','walnut',event).all();
+    new Wood('forestry','larch',event).all();
+    new Wood('forestry','teak',event).all();
+    new Wood('forestry','acacia_desert',event).all();
+    new Wood('forestry','lime',event).all();
+    new Wood('forestry','chestnut',event).all();
+    new Wood('forestry','wenge',event).all();
+    new Wood('forestry','baobab',event).all();
+    new Wood('forestry','sequoia',event).all();
+    new Wood('forestry','kapok',event).all();
+    new Wood('forestry','ebony',event).all();
+    new Wood('forestry','mahogany',event).all();
+    new Wood('forestry','balsa',event).all();
+    new Wood('forestry','willow',event).all();
+    new Wood('forestry','greenheart',event).all();
+    new Wood('forestry','hill_cherry',event).all();
+    new Wood('forestry','mahoe',event).all();
+    new Wood('forestry','poplar',event).all();
+    new Wood('forestry','palm',event).all();
+    new Wood('forestry','papaya',event).all();
+    new Wood('forestry','pine',event).all();
+    new Wood('forestry','plum',event).all();
+    new Wood('forestry','maple',event).all();
+    new Wood('forestry','citrus',event).all();
+    new Wood('forestry','giganteum',event).all();
+    new Wood('forestry','ipe',event).all();
+    new Wood('forestry','padauk',event).all();
+    new Wood('forestry','cocobolo',event).all();
+    new Wood('forestry','zebrawood',event).all();
+    new Wood('forestry','oak_fireproof',event).all();
+    new Wood('forestry','spruce_fireproof',event).all();
+    new Wood('forestry','birch_fireproof',event).all();
+    new Wood('forestry','jungle_fireproof',event).all();
+    new Wood('forestry','acacia_fireproof',event).all();
+    new Wood('forestry','dark_oak_fireproof',event).all();
+    new Wood('forestry','cherry_fireproof',event).all();
+    new Wood('forestry','larch_fireproof',event).all();
+    new Wood('forestry','teak_fireproof',event).all();
+    new Wood('forestry','acacia_desert_fireproof',event).all();
+    new Wood('forestry','lime_fireproof',event).all();
+    new Wood('forestry','chestnut_fireproof',event).all();
+    new Wood('forestry','wenge_fireproof',event).all();
+    new Wood('forestry','baobab_fireproof',event).all();
+    new Wood('forestry','sequoia_fireproof',event).all();
+    new Wood('forestry','kapok_fireproof',event).all();
+    new Wood('forestry','ebony_fireproof',event).all();
+    new Wood('forestry','mahogany_fireproof',event).all();
+    new Wood('forestry','balsa_fireproof',event).all();
+    new Wood('forestry','willow_fireproof',event).all();
+    new Wood('forestry','walnut_fireproof',event).all();
+    new Wood('forestry','greenheart_fireproof',event).all();
+    new Wood('forestry','hill_cherry_fireproof',event).all();
+    new Wood('forestry','mahoe_fireproof',event).all();
+    new Wood('forestry','poplar_fireproof',event).all();
+    new Wood('forestry','palm_fireproof',event).all();
+    new Wood('forestry','papaya_fireproof',event).all();
+    new Wood('forestry','pine_fireproof',event).all();
+    new Wood('forestry','plum_fireproof',event).all();
+    new Wood('forestry','maple_fireproof',event).all();
+    new Wood('forestry','citrus_fireproof',event).all();
+    new Wood('forestry','giganteum_fireproof',event).all();
+    new Wood('forestry','ipe_fireproof',event).all();
+    new Wood('forestry','padauk_fireproof',event).all();
+    new Wood('forestry','cocobolo_fireproof',event).all();
+    new Wood('forestry','zebrawook_fireproof',event).all();
+    //Tinkers Construct
+    //DANGER THIS CAUSES KUBEJS TO ERROR, KEEP DISABLED FOR NOW!
+    // new Wood('tconstruct','greenheart',event).all();
+    // new Wood('tconstruct','skyroot',event).all();
+    // new Wood('tconstruct','bloodshroom',event).all();
+    // new Wood('tconstruct','enderbark',event).all();
+
+    
 
         //Manual Recipes (For Edgecases) 
+
+        //ars nouveau
+        event.remove({id:'ars_nouveau:archwood_button'})
+        event.remove({id:'ars_nouveau:archwood_slab'})
+        event.remove({id:'ars_nouveau:archwood_fence_gate'})
+        event.remove({id:'ars_nouveau:archwood_trapdoor'})
+        event.remove({id:'ars_nouveau:archwood_pressure_plate'})
+        event.remove({id:'ars_nouveau:archwood_fence'})
+        event.remove({id:'ars_nouveau:archwood_door'})
+        event.shaped('2x ars_nouveau:archwood_slab',[
+            '   ',
+            '   ',
+            'TP '
+        ],
+            {
+                T:'#forge:tools/saws',
+                P:'ars_nouveau:archwood_planks'
+            })
+        event.recipes.gtceu.cutter(`cosmicfrontiers:ars_nouveau_aechwood_slab_cutting`)
+                .itemInputs(`ars_nouveau:archwood_planks`)
+                .itemOutputs(`2x ars_nouveau:archwood_slab`)
+                .duration(100)
+                .EUt(4);
+
+        //Farmers Delight
+        event.remove({id:'farmersdelight:canvas_sign'})
 
         //Menril Trapdoors... Do not exist?
         event.remove({id : 'integrateddynamics:crafting/menril_door'})
@@ -89,6 +189,43 @@ ServerEvents.recipes(event => {
             .duration(100)
             .EUt(4);
         //Oh boy, malum.. might just need to make a dedicated one for Malum
+
+        //misc bookshelf
+            event.remove({ output: `framedblocks:framed_bookshelf` })
+            event.recipes.gtceu.assembler(`framedblocks:framed_bookshelf`)
+                .itemInputs(`6x framedblocks:framed_cube`)
+                .itemInputs(`3x minecraft:book`)
+                .circuit(16)
+                .itemOutputs(`framedblocks:framed_bookshelf`)
+                .duration(100)
+                .EUt(4);
+
+            event.remove({ output: `framedblocks:framed_chiseled_bookshelf` })
+            event.recipes.gtceu.assembler(`framedblocks:framed_chiseled_bookshelf`)
+                .itemInputs(`6x framedblocks:framed_cube`)
+                .itemInputs(`3x framedblocks:framed_slab`)
+                .circuit(16)
+                .itemOutputs(`framedblocks:framed_chiseled_bookshelf`)
+                .duration(100)
+                .EUt(4);
+
+            event.remove({ output: `experienceobelisk:archivers_bookshelf` })
+            event.recipes.gtceu.assembler(`experienceobelisk:archivers_bookshelf`)
+                .itemInputs(`6x #minecraft:wooden_slabs`)
+                .itemInputs(`3x minecraft:writable_book`)
+                .circuit(16)
+                .itemOutputs(`experienceobelisk:archivers_bookshelf`)
+                .duration(100)
+                .EUt(4);
+
+            event.remove({ output: `experienceobelisk:enchanted_bookshelf` })
+            event.recipes.gtceu.assembler(`experienceobelisk:enchanted_bookshelf`)
+                .itemInputs(`6x #minecraft:wooden_slabs`)
+                .itemInputs(`3x minecraft:enchanted_book`)
+                .circuit(16)
+                .itemOutputs(`experienceobelisk:enchanted_bookshelf`)
+                .duration(100)
+                .EUt(4);
 })
 
 
@@ -480,18 +617,9 @@ Wood.prototype = {
                 .itemInputs(`6x ${modID}:${woodType}_slab`)
                 .itemInputs(`3x minecraft:book`)
                 .circuit(16)
-                .itemOutputs(`4x ${modID}:${woodType}_bookshelf`)
+                .itemOutputs(`${modID}:${woodType}_bookshelf`)
                 .duration(100)
                 .EUt(4);
-            event.shaped(`${modID}:${woodType}_bookshelf`, [
-                'WWW',
-                'BBB',
-                'WWW'
-            ],
-                {
-                    W: `${modID}:${woodType}_planks`,
-                    B: `minecraft:book`
-                })
         }
         return this;
     },
@@ -503,7 +631,7 @@ Wood.prototype = {
             event.recipes.gtceu.assembler(`cosmicfrontiers:${modID}/${woodType}_crafting_table`)
                 .itemInputs(`4x ${modID}:${woodType}_planks`)
                 .circuit(18)
-                .itemOutputs(`4x ${modID}:${woodType}_crafting_table`)
+                .itemOutputs(`${modID}:${woodType}_crafting_table`)
                 .duration(100)
                 .EUt(4);
             event.shaped(`${modID}:${woodType}_crafting_table`, [

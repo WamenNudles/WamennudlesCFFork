@@ -62,14 +62,17 @@ ServerEvents.recipes(event => {
         .duration(200)
         .EUt(GTValues.VA[GTValues.EV]);
     // Sodium Tungstate Solution 
-    // Impure Sodium Tungstate Solution (l) + 12 Sodium Sulfide (s) + 4 Water (l) -> Sodium Tungstate Solution (l) + 7 Sodium Molybdenum Sulfide (s) + 24 Sodium Hydroxide (s)
+    // OLD - WAS IMBALANCED AND LOSSY   Impure Sodium Tungstate Solution (l) + 12 Sodium Sulfide (s) + 4 Water (l) -> Sodium Tungstate Solution (l) + 7 Sodium Molybdenum Sulfide (s) + 24 Sodium Hydroxide (s)
+    // NEW Na2WO4[H2O] + 5 H2O + 4 Na2S -> Na2MoS4 + 6 NaOH + [h] + 3 H2
+    // Impure Sodium Tungstate Solution (l) + 6 Water + 8 Sodium Sulfide - > Sodium Tungstate Solution (l) + 7 Sodium Molybdenum Sulfide (s) + 18 Sodium Hydroxide (s) + 6 Hydrogen (g)
     event.recipes.gtceu.large_chemical_reactor('impure_w_sol_to_w_sol')
         .inputFluids('gtceu:impure_sodium_tungstate_solution 1000')
         .itemInputs('12x gtceu:sodium_sulfide_dust')
-        .inputFluids('minecraft:water 1000')
-        .outputFluids('gtceu:sodium_tungstate_solution 1000')
+        .inputFluids('minecraft:water 6000')
         .itemOutputs('7x gtceu:sodium_molybdenum_sulfide_dust')
-        .itemOutputs('24x gtceu:sodium_hydroxide_dust')
+        .itemOutputs('18x gtceu:sodium_hydroxide_dust')
+        .outputFluids('gtceu:sodium_tungstate_solution 1000')
+        .outputFluids('gtceu:hydrogen 6000')
         .duration(100)
         .EUt(GTValues.VA[GTValues.EV]);
 
@@ -166,4 +169,77 @@ ServerEvents.recipes(event => {
         .duration(60)
         .EUt(GTValues.VA[GTValues.EV]);
 
+
+    //Optimized Recipes #1
+
+
+    event.recipes.gtceu.macerator('fine_wolframite')
+        .itemInputs('gtceu:wolframite_dust')
+        .itemOutputs('gtceu:finely_ground_wolframite_dust')
+        .duration(80)
+        .EUt(GTValues.VA[GTValues.MV]);
+    event.recipes.gtceu.macerator('fine_scheelite')
+        .itemInputs('gtceu:scheelite_dust')
+        .itemOutputs('gtceu:finely_ground_scheelite_dust')
+        .duration(80)
+        .EUt(GTValues.VA[GTValues.MV]);
+    event.recipes.gtceu.macerator('fine_tungstate')
+        .itemInputs('gtceu:tungstate_dust')
+        .itemOutputs('gtceu:finely_ground_tungstate_dust')
+        .duration(80)
+        .EUt(GTValues.VA[GTValues.MV]);
+
+
+    //Wolframite
+    // 12 Wolframite (s) + 12 Sodium Hydroxide (s) + 2 Water (l) -> 2 Impure Sodium Tungstate Solution (l) + 5 Iron Hydroxide (s) + 5 Manganese Hydroxide (s)
+    event.recipes.gtceu.industrial_chemvat('wolframite_to_impure_naw')
+        .itemInputs('12x gtceu:finely_ground_wolframite_dust')
+        .inputFluids('gtceu:hydrochloric_acid 2000')
+        .itemOutputs('7x gtceu:tungstic_acid_dust')
+        .itemOutputs('5x gtceu:salt_dust')
+        .stationResearch(b => b
+            .researchStack('gtceu:ultradense_tungsten_plate')
+            .CWUt(16)
+            .EUt(GTValues.VA[GTValues.ZPM]))
+        .duration(120)
+        .EUt(GTValues.VH[GTValues.IV], 4);
+    //Scheelite
+    // 6 Scheelite (s) + 6 Sodium Carbonate (s) + Water (l) -> Impure Sodium Tungstate Solution (l) + 5 Calcite (s)
+    event.recipes.gtceu.industrial_chemvat('scheelite_to_impure_naw')
+        .itemInputs('6x gtceu:finely_ground_scheelite_dust')
+        .inputFluids('gtceu:hydrochloric_acid 2000')
+        .itemOutputs('7x gtceu:tungstic_acid_dust')
+        .itemOutputs('5x gtceu:salt_dust')
+        .stationResearch(b => b
+            .researchStack('gtceu:ultradense_tungsten_plate')
+            .CWUt(16)
+            .EUt(GTValues.VA[GTValues.ZPM]))
+        .duration(120)
+        .EUt(GTValues.VH[GTValues.IV], 4);
+    //Tunstate
+    // 7 Tungstate (s) + 6 Sodium Hydroxide (s) + Water (l) -> Impure Sodium Tungstate Solution (l) + 6 Lithium Hydroxide (s)
+    event.recipes.gtceu.industrial_chemvat('tunstate_to_impure_naw')
+        .itemInputs('7x gtceu:finely_ground_tungstate_dust')
+        .inputFluids('gtceu:hydrochloric_acid 2000')
+        .itemOutputs('7x gtceu:tungstic_acid_dust')
+        .itemOutputs('5x gtceu:salt_dust')
+        .stationResearch(b => b
+            .researchStack('gtceu:ultradense_tungsten_plate')
+            .CWUt(16)
+            .EUt(GTValues.VA[GTValues.ZPM]))
+        .duration(120)
+        .EUt(GTValues.VH[GTValues.IV], 4);
+
+
+    event.recipes.gtceu.industrial_chemvat('tungstic_dust_ebf_research')
+        .itemInputs('7x gtceu:tungstic_acid_dust')
+        .inputFluids('gtceu:hydrogen 6000')
+        .itemOutputs('gtceu:tungsten_dust')
+        .blastFurnaceTemp(3700)
+        .duration(60)
+        .stationResearch(b => b
+            .researchStack('gtceu:ultradense_tungsten_plate')
+            .CWUt(16)
+            .EUt(GTValues.VA[GTValues.ZPM]))
+        .EUt(GTValues.VH[GTValues.IV], 4);
 })

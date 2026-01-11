@@ -16,7 +16,7 @@
 		x: 6.0d
 		y: -6.5d
 	}]
-	order_index: 3
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -1386,8 +1386,8 @@
 			dependencies: ["38DA0B4E0DBAC364"]
 			id: "04915FE56BD0E314"
 			tasks: [{
-				id: "15F081CA0ECD7594"
-				item: "gtceu:iodine_ingot"
+				id: "2A38F2DD4576799A"
+				item: "gtceu:iodine_dust"
 				type: "item"
 			}]
 			x: 13.5d
@@ -1463,6 +1463,18 @@
 			title: "Ψ"
 			x: -5.5d
 			y: -4.5d
+		}
+		{
+			dependencies: ["38DA0B4E0DBAC364"]
+			id: "5D83CE332FAF1D68"
+			subtitle: "???"
+			tasks: [{
+				id: "48E8C06A34BF8426"
+				item: "cosmiccore:trinavine_ingot"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 3.5d
 		}
 	]
 	title: "&fCosmic Frontiers Periodic Table"

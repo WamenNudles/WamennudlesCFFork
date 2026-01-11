@@ -9,8 +9,8 @@ recipes:
   disableManualCompression: true
 
   # Change the recipe of Rods in the Lathe to 1 Rod and 2 Small Piles of Dust, instead of 2 Rods.
-  # Default: false
-  harderRods: false
+  # Default: true
+  harderRods: true
 
   # Whether to make crafting recipes for Bricks, Firebricks, Nether Bricks, and Coke Bricks harder.
   # Default: false
@@ -31,7 +31,7 @@ recipes:
 
   # Whether to make Redstone related recipes harder.
   # Default: false
-  hardRedstoneRecipes: false
+  hardRedstoneRecipes: true
 
   # Whether to make Vanilla Tools and Armor recipes harder.
   # Excludes Flint and Steel, and Buckets.
@@ -50,7 +50,7 @@ recipes:
   nerfPaperCrafting: true
 
   # Recipes for items like Iron Doors, Trapdoors, Anvil require Iron Plates, Rods, and more.
-  # Default: false
+  # Default: true
   hardAdvancedIronRecipes: true
 
   # Whether to make coloring blocks like Concrete or Glass harder.
@@ -86,8 +86,32 @@ recipes:
   hardMultiRecipes: false
 
   # Whether tools should have enchants or not. Like the flint sword getting fire aspect.
-  # Default: true
+  # Default: false
   enchantedTools: true
+
+  # Whether to enable macerator decomposition recycling
+  # Default: true
+  enableMaceratorRecycling: true
+
+  # Percentage yield of macerator decomposition recycling outputs, 1.0 means 100%
+  # Default: 1.0f
+  maceratorRecyclingYield: 1.0
+
+  # Whether to enable arc furnace decomposition recycling
+  # Default: true
+  enableArcRecycling: true
+
+  # Percentage yield of arc furnace decomposition recycling outputs, 1.0 means 100%
+  # Default: 1.0f
+  arcRecyclingYield: 1.0
+
+  # Whether to enable extractor decomposition recycling
+  # Default: true
+  enableExtractorRecycling: true
+
+  # Percentage yield of extractor decomposition recycling outputs, 1.0 means 100%
+  # Default: 1.0f
+  extractorRecyclingYield: 1.0
 
 worldgen:
   # Rubber Tree spawn chance (decimal % per chunk)
@@ -106,11 +130,11 @@ worldgen:
   # Whether to increase number of rolls for dungeon chests. Increases dungeon loot drastically.
   # Default: true
   # WARNING: Currently unimplemented.
-  increaseDungeonLoot: true
+  increaseDungeonLoot: false
 
   # Allow GregTech to add additional GregTech Items as loot in various structures.
   # Default: true
-  addLoot: true
+  addLoot: false
 
   oreVeins:
     # The grid size (in chunks) for ore vein generation
@@ -131,11 +155,15 @@ worldgen:
 
     # Distance between bedrock ore veins in chunks, if enabled.
     # Default: 16
-    bedrockOreDistance: 4
+    bedrockOreDistance: 20
 
     # Make bedrock ore/fluid veins infinite?
     # Default: false
     infiniteBedrockOresFluids: false
+
+    # Generate ores indicators above ore veins
+    # Default: true
+    oreIndicators: true
 
     # Sets the maximum number of chunks that may be cached for ore vein generation.
     # Higher values may improve world generation performance, but at the cost of more RAM usage.
@@ -149,19 +177,13 @@ worldgen:
     oreIndicatorChunkCacheSize: 2048
 
 machines:
-  # Whether insufficient energy supply should reset Machine recipe progress to zero.
-  # If true, progress will reset.
-  # If false, progress will decrease to zero with 2x speed
-  # Default: false
-  recipeProgressLowEnergy: true
-
   # Whether to require a Wrench, Wirecutter, or other GregTech tools to break machines, casings, wires, and more.
-  # Default: false
+  # Default: true
   requireGTToolsForBlocks: true
 
   # Whether machines explode in rainy weather or when placed next to certain terrain, such as fire or lava
   # Default: false
-  shouldWeatherOrTerrainExplosion: true
+  shouldWeatherOrTerrainExplosion: false
 
   # Energy use multiplier for electric items.
   # Default: 100
@@ -183,6 +205,10 @@ machines:
   # Whether to play machine sounds while machines are active.
   # Default: true
   machineSounds: true
+
+  # Duration in ticks that batching will try to reach.
+  # Default: 100
+  batchDuration: 100
 
   # Whether Steam Multiblocks should use Steel instead of Bronze.
   # Default: false
@@ -209,6 +235,10 @@ machines:
   # Default: true
   enableMaintenance: true
 
+  # Time in ticks between when Multiblocks can require Maintenance. By default, 48 hours.
+  # Default: 3456000
+  maintenanceTime: 3456000
+
   # Whether to enable World Accelerators, which accelerate ticks for surrounding Tile Entities, Crops, etc.
   # Default: true
   enableWorldAccelerators: true
@@ -226,13 +256,17 @@ machines:
   # Whether the machine's circuit slot need to be inserted a real circuit.
   ghostCircuit: true
 
-  # Wether to add a "Bedrock Ore Miner" (also enables bedrock ore generation)
+  # Whether to add a "Bedrock Ore Miner" (also enables bedrock ore generation)
   # Default: false
   doBedrockOres: true
 
   # What Kind of material should the bedrock ore miner output?
   # Default: "raw"
   bedrockOreDropTagPrefix: raw
+
+  # The base amount of ticks per block for electric singleblock ore miners
+  # Default: 320
+  minerSpeed: 320
 
   # Makes nearly every GCYM Multiblock require blocks which set their maximum voltages.
   # Default: false
@@ -271,7 +305,7 @@ machines:
 
   # Whether the Assembly Line should require the fluid inputs to be in order.
   # (Requires Ordered Assembly Line Item Inputs to be enabled.)
-  # Default: false
+  # Default: true
   orderedAssemblyLineFluids: true
 
   # Default maximum parallel of steam multiblocks
@@ -347,6 +381,11 @@ client:
   # Default: true
   machinesEmissiveTextures: true
 
+  # Whether most machines will have block entity renderers, mainly used for rendering certain covers. (Restart required)
+  # Disable if experiencing performance issues.
+  # Default: true
+  machinesHaveBERsByDefault: true
+
   # Whether or not sounds should be played when using tools outside of crafting.
   # Default: true
   toolUseSounds: true
@@ -361,8 +400,8 @@ client:
   defaultPaintingColor: #FFFFFF
 
   # The default color to overlay onto Machine (and other) UIs.
-  # 16777215 (#FFFFFF) is no coloring (like GTCE) (default).
-  # 13819135 (#D2DCFF in decimal) is the classic blue from GT5.
+  # #FFFFFF is no coloring (like GTCE) (default).
+  # #D2DCFF is the classic blue from GT5.
   defaultUIColor: #FFFFFF
 
   # Use VBO cache for multiblock preview.
@@ -399,6 +438,21 @@ client:
     # Render fluids in multiblocks that support them?
     # Default: true
     renderFluids: true
+
+    # Whether or not to color tiered machine highlights in the tier color
+    # Default: true
+    coloredTieredMachineOutline: true
+
+    # Whether or not to color wire/cable highlights based on voltage tier
+    # Default: true
+    coloredWireOutline: true
+
+  tankItemFluidPreview:
+    # Set true to render the including fluid icons to GT Drums
+    drum: false
+
+    # Set true to render the including fluid icons to Super (Quantum) Tanks
+    quantumTank: false
 
 # Config options for Tools and Armor
 tools:
@@ -462,15 +516,15 @@ tools:
 gameplay:
   # Enable hazardous materials
   # Default: true
-  hazardsEnabled: true
+  hazardsEnabled: false
 
   # Whether hazards are applied to all valid items, or just GT's.
   # true = all, false = GT only.
   # Default: true
-  universalHazards: true
+  universalHazards: false
 
   # Whether environmental hazards like pollution or radiation are active
-  # Default: true
+  # Default: false
   environmentalHazards: false
 
   # How much environmental hazards decay per chunk, per tick.
@@ -505,10 +559,10 @@ compat:
     # The interval between ME Hatch/Bus interact ME network.
     # It may cause lag if the interval is too small.
     # Default: 2 sec
-    updateIntervals: 40
+    updateIntervals: 1
 
     # The energy consumption of ME Hatch/Bus.
-    # Default: 1.0AE/t
+    # Default: 4.0AE/t
     meHatchEnergyUsage: 1.0
 
   # Config options regarding GTCEu compatibility with minimap mods
@@ -561,7 +615,7 @@ compat:
     buttonAnchor: BOTTOM_LEFT
 
     # Which direction the buttons will go
-    # Default: "HORIZONTAL"
+    # Default: "VERTICAL"
     # Allowed values:
     # - VERTICAL
     # - HORIZONTAL
@@ -574,10 +628,6 @@ compat:
     # How vertically far away from the anchor to place the buttons
     # Default: 0
     yOffset: 0
-
-    # Whether to put buttons on a separate toolbar on the right instead of the map type toolbar in JourneyMap.
-    # Default: true
-    rightToolbar: false
 
   # Whether to hide facades of all blocks in JEI and creative search menu.
   # Default: true
@@ -602,7 +652,7 @@ compat:
 dev:
   # Debug general events? (will print recipe conficts etc. to server's debug.log)
   # Default: false
-  debug: true
+  debug: false
 
   # Debug ore vein placement? (will print placed veins to server's debug.log)
   # Default: false (no placement printout in debug.log)
