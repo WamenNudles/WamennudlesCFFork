@@ -14,5 +14,8 @@ ItemEvents.modification(event => {
         item.fireResistant = true
         item.rarity = "UNCOMMON"
       })
-    
+    // Adding stack size to lumisene bottles
+    event.modify('supplementaries:lumisene_bottle', item => {
+        item.maxStackSize = 64
+      })
   })
